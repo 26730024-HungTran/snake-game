@@ -8,7 +8,7 @@ BreakBeforeBraces: Allman
 AllowShortIfStatementsOnASingleLine: false
 AllowShortLoopsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: Empty
-SpaceBeforeParens: Always
+SpaceBeforeParens: ControlStatements
 PointerAlignment: Left
 NamespaceIndentation: All
 SortIncludes: false
