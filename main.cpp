@@ -13,6 +13,10 @@ struct Point
 {
     int x, y;
 };
+
+
+
+
 class CONRAN
 {
    public:
