@@ -70,7 +70,6 @@ class MOI
 {
    public:
     Point ViTri;
-    // Sinh moi tai vi tri ngau nhien, khong trung than ran
     void TaoMoi(CONRAN& r)
     {
         do
