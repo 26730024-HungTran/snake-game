@@ -9,7 +9,9 @@ void gotoxy(int column, int line);
 
 const int RONG = 40;
 const int CAO = 20;
-const int THOI_GIAN_MOI_BUOC = 120;
+const int CHIEU_RONG_KY_TU = 1;
+const int THOI_GIAN_NGANG = 100;
+const int THOI_GIAN_DOC = 150;
 
 struct Point
 {
@@ -34,8 +36,8 @@ class CONRAN
     {
         for (int i = 0; i < DoDai; i++)
         {
-            gotoxy(A[i].x, A[i].y);
-            cout << "X";
+            gotoxy(A[i].x * CHIEU_RONG_KY_TU, A[i].y);
+            cout << 'X';
         }
     }
     void DiChuyen(int Huong)
@@ -86,8 +88,8 @@ class MOI
     }
     void Ve()
     {
-        gotoxy(ViTri.x, ViTri.y);
-        cout << "O";
+        gotoxy(ViTri.x * CHIEU_RONG_KY_TU, ViTri.y);
+        cout << 'O';
     }
 };
 
@@ -95,32 +97,32 @@ void VeKhung()
 {
     for (int x = 0; x < RONG; x++)
     {
-        gotoxy(x, 0);
+        gotoxy(x * CHIEU_RONG_KY_TU, 0);
         cout << '#';
-        gotoxy(x, CAO - 1);
+        gotoxy(x * CHIEU_RONG_KY_TU, CAO - 1);
         cout << '#';
     }
     for (int y = 1; y < CAO - 1; y++)
     {
         gotoxy(0, y);
         cout << '#';
-        gotoxy(RONG - 1, y);
+        gotoxy((RONG - 1) * CHIEU_RONG_KY_TU, y);
         cout << '#';
     }
 }
 
 void XoaDiem(Point viTri)
 {
-    gotoxy(viTri.x, viTri.y);
+    gotoxy(viTri.x * CHIEU_RONG_KY_TU, viTri.y);
     cout << ' ';
 }
 
 void XoaVungChoi()
 {
-    string dongTrong(RONG - 2, ' ');
+    string dongTrong((RONG - 2) * CHIEU_RONG_KY_TU, ' ');
     for (int y = 1; y < CAO - 1; y++)
     {
-        gotoxy(1, y);
+        gotoxy(CHIEU_RONG_KY_TU, y);
         cout << dongTrong;
     }
 }
@@ -187,7 +189,7 @@ int main()
             r.Ve();
             m.Ve();
             cout.flush();
-            Sleep(THOI_GIAN_MOI_BUOC);
+            Sleep(Huong == 0 || Huong == 2 ? THOI_GIAN_NGANG : THOI_GIAN_DOC);
         }
 
         XoaVungChoi();
